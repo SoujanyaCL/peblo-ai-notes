@@ -35,18 +35,7 @@ Built with the MERN stack and modern authentication system.
 ### 🧠 AI Integration
 - Google Gemini API / OpenAI API (if used in project)
 
-
 ---
-
-## ⚙️ Installation & Setup Guide
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/SoujanyaCL/peblo-ai-notes.git
-cd peblo-ai-notes
-
---- 
 
 ### 🚀 Future Improvements
 🎙️ Voice-to-text note creation
@@ -57,6 +46,15 @@ cd peblo-ai-notes
 
 ---
 
-### 👨‍💻 Author
+## ⚙️ Installation & Setup Guide
 
+### Clone the Repository
+
+```bash
+git clone https://github.com/SoujanyaCL/peblo-ai-notes.git
+cd peblo-ai-notes
+
+--- 
+
+### 👨‍💻 Author
 Soujanya C L
