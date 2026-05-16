@@ -48,8 +48,46 @@ Built with the MERN stack and modern authentication system.
 
 ## ⚙️ Installation & Setup Guide
 
-### Clone the Repository
+###    1 Clone the Repository
 
 ```bash
 git clone https://github.com/SoujanyaCL/peblo-ai-notes.git
 cd peblo-ai-notes
+
+    📦 2. Install Dependencies
+
+    🔹 Frontend  
+    cd client
+    npm install
+
+    🔹 Backend
+    cd server
+    npm install
+
+    🔐 3. Environment Variables Setup
+
+    DATABASE_URL=
+    JWT_SECRET=
+    LLM_API_KEY=
+
+    🚀 4. Run the Application
+
+    🔹 Start Backend
+    cd server
+    npm start
+
+    🔹 Start Frontend
+    cd client
+    npm run dev
+
+    🧪 5. How to Test the Application
+
+    After running both servers:
+
+    Open browser → Frontend URL (usually http://localhost:5173 or 3000)
+    Register a new user
+    Login with credentials
+    Create a note
+    Test AI summarization feature
+    Use search and filter options
+    Try sharing a note (if available)
