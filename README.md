@@ -35,14 +35,6 @@ Built with the MERN stack and modern authentication system.
 ### 🧠 AI Integration
 - Google Gemini API / OpenAI API (if used in project)
 
----
-
-## 📁 Project Structure
-peblo-ai-notes/
-│
-├── client/ # Frontend (React)
-├── server/ # Backend (Node + Express)
-└── README.md
 
 ---
 
@@ -62,6 +54,8 @@ cd peblo-ai-notes
 ☁️ Cloud deployment (Vercel / Render)
 🤝 Real-time collaboration features
 📱 Mobile app version
+
+---
 
 ### 👨‍💻 Author
 
