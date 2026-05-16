@@ -48,13 +48,14 @@ Built with the MERN stack and modern authentication system.
 
 ## ⚙️ Installation & Setup Guide
 
-###    1 Clone the Repository
+
+    📦 1. Install Dependencies
 
 ```bash
 git clone https://github.com/SoujanyaCL/peblo-ai-notes.git
 cd peblo-ai-notes
 
-    📦 2. Install Dependencies
+  📦 2. Install Dependencies
 
     🔹 Frontend  
     cd client
