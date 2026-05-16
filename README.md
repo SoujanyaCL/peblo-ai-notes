@@ -53,5 +53,3 @@ Built with the MERN stack and modern authentication system.
 ```bash
 git clone https://github.com/SoujanyaCL/peblo-ai-notes.git
 cd peblo-ai-notes
-
---- 
