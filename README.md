@@ -55,6 +55,3 @@ git clone https://github.com/SoujanyaCL/peblo-ai-notes.git
 cd peblo-ai-notes
 
 --- 
-
-### 👨‍💻 Author
-Soujanya C L
