@@ -86,9 +86,11 @@ Built with the MERN stack and modern authentication system.
     After running both servers:
 
     Open browser → Frontend URL (usually http://localhost:5173 or 3000)
-    Register a new user
-    Login with credentials
-    Create a note
-    Test AI summarization feature
-    Use search and filter options
-    Try sharing a note (if available)
+    ### 🌐 1. Open the Application
+    ### 👤 2. User Authentication
+    ### 📝 3. Notes Functionality (CRUD)
+    ### 🧠 4. AI Summarization Feature
+    ### 🔍 5. Search & Filter
+    ### 🔗 6. Public Sharing (If Implemented)
+    ### 📊 7. Dashboard / Insights (If Available)
+    ### ✅ Expected Outcome
