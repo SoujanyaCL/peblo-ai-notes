@@ -54,15 +54,15 @@ peblo-ai-notes/
 git clone https://github.com/SoujanyaCL/peblo-ai-notes.git
 cd peblo-ai-notes
 
-🚀 Future Improvements
+--- 
+
+### 🚀 Future Improvements
 🎙️ Voice-to-text note creation
 🧠 Better AI summarization
 ☁️ Cloud deployment (Vercel / Render)
 🤝 Real-time collaboration features
 📱 Mobile app version
 
-👨‍💻 Author
+### 👨‍💻 Author
 
 Soujanya C L
-
-GitHub: SoujanyaCL
