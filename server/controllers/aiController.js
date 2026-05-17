@@ -13,24 +13,21 @@ export const generateSummary = async (req, res) => {
       });
     }
 
-    // Strong prompt (forces structured output)
     const prompt = `
 You are an AI assistant that extracts structured information from notes.
 
-Analyze the following note and return ONLY valid JSON.
+Return ONLY valid JSON in this format:
 
-IMPORTANT RULES:
-- Return ONLY JSON (no explanation, no markdown)
-- Summary must be 1-2 lines
-- ActionItems must contain 3–5 short bullet points (never empty)
-- SuggestedTitle must be short and meaningful
-
-OUTPUT FORMAT:
 {
-  "Summary": "",
-  "ActionItems": ["", "", "", ""],
-  "SuggestedTitle": ""
+  "Summary": "1-2 line summary",
+  "ActionItems": ["task 1", "task 2", "task 3"],
+  "SuggestedTitle": "short title"
 }
+
+Rules:
+- Return ONLY JSON
+- No markdown, no explanation
+- Keep it clean and strict
 
 NOTE:
 ${content}
@@ -39,14 +36,14 @@ ${content}
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "openai/gpt-3.5-turbo",
+        model: "openai/gpt-4o-mini",
         messages: [
           {
             role: "user",
             content: prompt,
           },
         ],
-        temperature: 0.2,
+        temperature: 0.3,
       },
       {
         headers: {
@@ -56,30 +53,26 @@ ${content}
       }
     );
 
-    const rawContent = response.data.choices[0].message.content;
+    let rawContent = response.data.choices[0].message.content;
 
     let parsedContent;
 
     try {
-      // Clean AI output
-      const clean = rawContent
-        .replace(/```json/g, "")
-        .replace(/```/g, "")
-        .replace(/^[^{]*/, "")
-        .trim();
+      // safer JSON extraction
+      const jsonMatch = rawContent.match(/\{[\s\S]*\}/);
+      const cleanJson = jsonMatch ? jsonMatch[0] : rawContent;
 
-      parsedContent = JSON.parse(clean);
+      parsedContent = JSON.parse(cleanJson);
 
-      // Ensure valid structure
       parsedContent = {
         Summary: parsedContent.Summary || "",
         ActionItems: Array.isArray(parsedContent.ActionItems)
           ? parsedContent.ActionItems
           : [],
-        SuggestedTitle: parsedContent.SuggestedTitle || "Untitled Note",
+        SuggestedTitle:
+          parsedContent.SuggestedTitle || "Untitled Note",
       };
 
-      // If ActionItems still empty, fallback
       if (parsedContent.ActionItems.length === 0) {
         parsedContent.ActionItems = [
           "Review the note",
@@ -87,7 +80,6 @@ ${content}
           "Take necessary actions",
         ];
       }
-
     } catch (err) {
       console.log("JSON Parse Error:", err.message);
 
@@ -103,23 +95,24 @@ ${content}
     }
 
     const savedNote = await Note.create({
-        user: req.user?._id, // safe for now (won't crash if undefined)
-        content,
-        title: parsedContent.SuggestedTitle,
-        summary: parsedContent.Summary,
-        actionItems: parsedContent.ActionItems,
+      user: req.user?._id,
+      content,
+      title: parsedContent.SuggestedTitle,
+      summary: parsedContent.Summary,
+      actionItems: parsedContent.ActionItems,
     });
 
     return res.status(200).json({
-        success: true,
-        data: savedNote,
+      success: true,
+      data: savedNote,
     });
 
   } catch (error) {
-    console.log(error.response?.data || error.message);
+    console.log("AI ERROR:", error.response?.data || error.message);
 
     return res.status(500).json({
-      message: error.message,
+      message: "AI generation failed. Please try again.",
+      error: error.message,
     });
   }
 };
