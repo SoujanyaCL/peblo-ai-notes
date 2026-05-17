@@ -94,3 +94,42 @@ Built with the MERN stack and modern authentication system.
     🔗 6. Public Sharing (If Implemented)
     📊 7. Dashboard / Insights (If Available)
     ✅ Expected Outcome
+
+
+## 🖼️ Screenshots
+
+### 🔐 Login Page
+![Login](./assets/login.png)
+
+### 🏠 Home Page
+![Home](./assets/home.png)
+
+### 📊 Dashboard View
+![Dashboard](./assets/dashboard-view.png)
+
+### 📝 Notes Page
+![Notes](./assets/notes.png)
+
+### 🧠 AI Summary
+![AI Summary](./assets/ai-summary.png)
+
+### 🔍 Search Feature
+![Search](./assets/search.png)
+
+### 🔗 Share Link
+![Share Link](./assets/share-link.png)
+
+### 🌐 Public Note View
+![Public Note View](./assets/public-note-view.png)
+
+### 📜 History Page
+![History](./assets/history.png)
+
+### 📦 Archived Notes
+![Archived Notes](./assets/archived.png)
+
+### 🔄 Restore Feature
+![Restore](./assets/restore.png)
+
+### 🗑️ Delete Note
+![Delete Note](./assets/delete.png)
